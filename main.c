@@ -7,6 +7,7 @@
 
 unsigned char stBuff[10240];
 // new com
+// comm 02
 
 void handler(int sig)
 {
