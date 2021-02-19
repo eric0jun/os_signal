@@ -6,6 +6,8 @@
 #include <execinfo.h>
 
 unsigned char stBuff[10240];
+// new com
+
 void handler(int sig)
 {
 
