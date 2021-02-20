@@ -1,0 +1,51 @@
+https://github.com/eric0jun/os_signal.git
+git@github.com:eric0jun/os_signal.git
+gh repo clone eric0jun/os_signal
+
+git remote add origin https://github.com/eric0jun/os_signal.git
+git push -u origin master
+
+git checkout -b localbranch
+
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+==========================
+
+root_main <-- server repository main branch
+main <-- local clone of main brnach in client repository
+work_jzhou <-- local working branch 
+           
+               cd <working-space.root> 
+               git init                <-- create empty 
+               git config --global user.name <name>
+               git config --global user.email <name>
+               git config --system core.editor <editor>
+               git config --global credential.helper cache
+               git config --global --edit
+
+               cd <working-space.root> <-- get into local git repository
+               git checkout main       <-- switch to local cloned branch
+               git pull <root_main>    <-- update local cloned main branch
+               git checkout work_jzhou <-- switch to local personal branch
+
+p4 update ===> git merge main          <-- update local personal branch
+p4 update ===> git rebase main         <-- update local personal branch (recommended)
+
+               vi main.c
+               git status
+               git add main.c
+               git status
+               git commit -m "change 02"
+
+               git checkout main       <-- switch to local cloned branch
+               git merge work_jzhou    <-- update local personal branch
+
+          ==> git push <root_main> main
+          ==> git checkout main; git pull main
+         
+
+
